@@ -34,8 +34,8 @@ ai-batik-motifs-detector/
 
 1. **Clone the repository:**
    \`\`\`bash
-   git clone https://github.com/yourusername/ai-batik-motifs-detector.git
-   cd ai-batik-motifs-detector
+   git clone https://github.com/bennypepper/CNN-Batik-Motifs-Detector.git
+   cd cnn-batik-motifs-detector
    \`\`\`
 
 2. **Install the required dependencies:**

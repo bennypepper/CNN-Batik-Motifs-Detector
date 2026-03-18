@@ -18,7 +18,7 @@ Batik is a highly complex traditional art form, making automated motif recogniti
 * **Interactive Deployment:** Built a lightweight Streamlit app (`app.py`) that handles image preprocessing and serves model predictions seamlessly.
 
 ## 📂 Repository Structure
-\`\`\`text
+```text
 ai-batik-motifs-detector/
 ├── data/                   # Dataset samples
 ├── docs/                   # Final project reports and presentation slides

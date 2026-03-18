@@ -18,7 +18,7 @@ Batik is a highly complex traditional art form, making automated motif recogniti
 * **Interactive Deployment:** Built a lightweight Streamlit app (`app.py`) that handles image preprocessing and serves model predictions seamlessly.
 
 ## 📂 Repository Structure
-\`\`\`text
+```text
 ai-batik-motifs-detector/
 ├── data/                   # Dataset samples
 ├── docs/                   # Final project reports and presentation slides
@@ -28,25 +28,25 @@ ai-batik-motifs-detector/
 │   └── app.py              # Streamlit web application code
 ├── requirements.txt        # Python dependencies
 └── README.md
-\`\`\`
+```
 
 ## 💻 How to Run Locally
 
 1. **Clone the repository:**
-   \`\`\`bash
+   ```bash
    git clone https://github.com/bennypepper/CNN-Batik-Motifs-Detector.git
    cd cnn-batik-motifs-detector
-   \`\`\`
+   ```
 
 2. **Install the required dependencies:**
-   \`\`\`bash
+   ```bash
    pip install -r requirements.txt
-   \`\`\`
+   ```
 
 3. **Run the Streamlit application:**
-   \`\`\`bash
+   ```bash
    streamlit run src/app.py
-   \`\`\`
+   ```
 
 ## 📊 Results & Documentation
 * The model achieved an F1-score of 0.81 on the test set. 

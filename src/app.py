@@ -97,12 +97,10 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 @st.cache_data
 def load_labels():
     # Menggabungkan path direktori 'src' dengan 'labels.txt'
-    # Catatan: Asumsi file labels.txt ditaruh di dalam folder 'src'
-    label_path = os.path.join(BASE_DIR, 'labels.txt')
     
     # Jika file labels.txt Anda ditaruh di folder 'models', gunakan kode di bawah ini dan hapus kode di atas:
-    # ROOT_DIR = os.path.dirname(BASE_DIR)
-    # label_path = os.path.join(ROOT_DIR, 'models', 'labels.txt')
+    ROOT_DIR = os.path.dirname(BASE_DIR)
+    label_path = os.path.join(ROOT_DIR, 'models', 'labels.txt')
     
     if not os.path.exists(label_path):
         st.error(f"❌ File '{label_path}' tidak ditemukan.")

@@ -91,26 +91,33 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# MENDAPATKAN PATH DIREKTORI SAAT INI (folder 'src')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 @st.cache_data
 def load_labels():
-    label_path = 'labels.txt'
+    # Menggabungkan path direktori 'src' dengan 'labels.txt'
+    # Catatan: Asumsi file labels.txt ditaruh di dalam folder 'src'
+    label_path = os.path.join(BASE_DIR, 'labels.txt')
+    
+    # Jika file labels.txt Anda ditaruh di folder 'models', gunakan kode di bawah ini dan hapus kode di atas:
+    # ROOT_DIR = os.path.dirname(BASE_DIR)
+    # label_path = os.path.join(ROOT_DIR, 'models', 'labels.txt')
+    
     if not os.path.exists(label_path):
-        st.error("❌ File 'labels.txt' tidak ditemukan.")
-        st.warning("Pastikan file 'labels.txt' dari output Kaggle berada di direktori yang sama.")
+        st.error(f"❌ File '{label_path}' tidak ditemukan.")
+        st.warning("Pastikan file 'labels.txt' berada di direktori yang tepat.")
         st.stop()
     
     with open(label_path, 'r') as f:
         labels = [line.strip() for line in f.readlines()]
     return labels
 
-
 try:
     class_names = load_labels()
 except Exception as e:
     st.error(f"Gagal membaca labels.txt: {e}")
     st.stop()
-
 
 BATIK_INFO = {
     'Aceh_Pintu_Aceh': "Motif Pintu Aceh menggambarkan bentuk pintu rumah adat Aceh yang rendah. Filosofinya melambangkan kerendahan hati dan keterbukaan masyarakat Aceh, namun tetap memegang teguh batasan adat dan agama.",
@@ -139,7 +146,6 @@ BATIK_INFO = {
     'Yogyakarta_Kawung': "Bermotif geometris empat bulatan (buah aren/kolang-kaling). Melambangkan kesucian hati, pengendalian diri, dan harapan agar manusia berguna bagi sesamanya.",
     'Yogyakarta_Parang': "Varian Parang dari Yogyakarta (sering disebut Parang Rusak). Melambangkan perang melawan hawa nafsu dan keteguhan hati dalam membela kebenaran."
 }
-
 
 with st.sidebar:
     st.title("ℹ️ Tentang Projek")
@@ -179,10 +185,14 @@ with st.sidebar:
     st.markdown("---")
     st.caption("© 2025 Projek PCD Batik")
 
-
 @st.cache_resource
 def load_model():
-    model_path = 'batik_model_deploy.h5'
+    # Menggabungkan path direktori 'src' dengan 'batik_model_deploy.h5'
+    model_path = os.path.join(BASE_DIR, 'batik_model_deploy.h5')
+    
+    # Jika file .h5 Anda ditaruh di folder 'models', gunakan ini:
+    # ROOT_DIR = os.path.dirname(BASE_DIR)
+    # model_path = os.path.join(ROOT_DIR, 'models', 'batik_model_deploy.h5')
     
     if not os.path.exists(model_path):
         st.error(f"⚠️ File '{model_path}' tidak ditemukan.")
@@ -194,9 +204,7 @@ def load_model():
         st.error(f"❌ Error saat memuat model: {e}")
         return None
 
-
 model = load_model()
-
 
 def preprocess_image(image):
     image = image.resize((224, 224))
@@ -206,7 +214,6 @@ def preprocess_image(image):
     image_array = image_array.astype('float32')
     image_array = np.expand_dims(image_array, axis=0)
     return image_array
-
 
 st.title("AI Deteksi Motif Batik Nusantara")
 st.markdown("*Unggah foto kain batik, dan biarkan AI mengungkap filosofinya.*")

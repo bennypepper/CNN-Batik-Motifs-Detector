@@ -91,20 +91,16 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# MENDAPATKAN PATH DIREKTORI SAAT INI (folder 'src')
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(BASE_DIR)
 
 @st.cache_data
 def load_labels():
-    # Menggabungkan path direktori 'src' dengan 'labels.txt'
-    
-    # Jika file labels.txt Anda ditaruh di folder 'models', gunakan kode di bawah ini dan hapus kode di atas:
-    ROOT_DIR = os.path.dirname(BASE_DIR)
     label_path = os.path.join(ROOT_DIR, 'models', 'labels.txt')
     
     if not os.path.exists(label_path):
         st.error(f"❌ File '{label_path}' tidak ditemukan.")
-        st.warning("Pastikan file 'labels.txt' berada di direktori yang tepat.")
+        st.warning("Pastikan file 'labels.txt' berada di direktori 'models'.")
         st.stop()
     
     with open(label_path, 'r') as f:
@@ -185,12 +181,7 @@ with st.sidebar:
 
 @st.cache_resource
 def load_model():
-    # Menggabungkan path direktori 'src' dengan 'batik_model_deploy.h5'
-    model_path = os.path.join(BASE_DIR, 'batik_model_deploy.h5')
-    
-    # Jika file .h5 Anda ditaruh di folder 'models', gunakan ini:
-    # ROOT_DIR = os.path.dirname(BASE_DIR)
-    # model_path = os.path.join(ROOT_DIR, 'models', 'batik_model_deploy.h5')
+    model_path = os.path.join(ROOT_DIR, 'models', 'batik_model_deploy.h5')
     
     if not os.path.exists(model_path):
         st.error(f"⚠️ File '{model_path}' tidak ditemukan.")

@@ -1,0 +1,37 @@
+Standard Accuracy : 0.8378
+TTA Accuracy      : 0.8468
+
+                             precision    recall  f1-score   support
+
+                Bali_Barong     1.0000    1.0000    1.0000         8
+                 Bali_Merak     0.8000    0.8889    0.8421         9
+                     Ceplok     0.8333    0.5556    0.6667         9
+               Corak_Insang     0.8571    1.0000    0.9231        12
+                 Ikat_Celup     0.8750    0.7778    0.8235         9
+        Jakarta_Ondel_Ondel     1.0000    0.8750    0.9333         8
+     Jawa_Barat_Megamendung     1.0000    1.0000    1.0000        32
+           Jawa_Timur_Pring     0.6000    0.7500    0.6667         8
+           Kalimantan_Dayak     0.9677    0.8571    0.9091        35
+              Lampung_Gajah     0.8750    0.8750    0.8750         8
+                      Lasem     0.5000    0.7778    0.6087         9
+         Madura_Mataketeran     1.0000    1.0000    1.0000        11
+                Maluku_Pala     0.9091    1.0000    0.9524        10
+                NTB_Lumbung     1.0000    1.0000    1.0000         8
+                Papua_Asmat     0.7692    1.0000    0.8696        10
+          Papua_Cendrawasih     0.9167    0.6111    0.7333        18
+                 Papua_Tifa     1.0000    1.0000    1.0000        10
+     Priangan_Merak_Ngibing     0.4000    0.4000    0.4000         5
+                      Sekar     0.5000    0.8889    0.6400         9
+                  Sidoluhur     1.0000    0.4286    0.6000         7
+                      Sogan     0.4286    0.3750    0.4000         8
+                Solo_Parang     0.7778    0.7368    0.7568        19
+   Sulawesi_Selatan_Lontara     1.0000    0.8000    0.8889        10
+Sumatera_Barat_Rumah_Minang     0.9091    1.0000    0.9524        10
+   Sumatera_Utara_Boraspati     0.9231    1.0000    0.9600        12
+                     Tambal     1.0000    0.5000    0.6667         8
+          Yogyakarta_Kawung     0.9000    0.9474    0.9231        19
+          Yogyakarta_Parang     0.7333    0.9167    0.8148        12
+
+                   accuracy                         0.8468       333
+                  macro avg     0.8384    0.8201    0.8145       333
+               weighted avg     0.8681    0.8468    0.8460       333

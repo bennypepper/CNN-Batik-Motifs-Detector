@@ -3,13 +3,28 @@ __pycache__/
 .venv/
 env/
 *.pyc
+*.pyo
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-# Large Datasets (Optional, if your raw_batik_v2.1 folder is over 100MB)
+# Large model files (tracked via Git LFS or downloaded separately)
+*.h5
+*.keras
+*.tflite
+
+# Large datasets
 data/raw_batik_v2.1/
+
+# Training artifacts too large for git
+results/v2.5/fold_*.keras
+results/v2.5/best_*.keras
 
 # OS generated files
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/

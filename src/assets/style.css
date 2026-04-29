@@ -219,6 +219,9 @@
         border: none;
         border-radius: 6px !important;
     }
+    [data-testid="stFileUploaderDropzone"] button * {
+        color: white !important;
+    }
 
     /* Image Preview Controls */
     [data-testid="stImage"] img {
